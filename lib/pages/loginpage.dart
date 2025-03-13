@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smarthertask/auth/localdatabase.dart';
-import 'package:smarthertask/components.dart/textfield.dart';
+import 'package:smarthertask/components/mybottomnavbar.dart';
+import 'package:smarthertask/components/textfield.dart';
 import 'package:smarthertask/pages/homepage.dart';
 
-import '../components.dart/button.dart';
+import '../components/button.dart';
 
 class MyLoginPage extends StatelessWidget {
   TextEditingController emailController = TextEditingController();
@@ -28,9 +29,8 @@ class MyLoginPage extends StatelessWidget {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-            builder: (context) => MyHomePage(
-                //userEmail: email
-                )),
+          builder: (context) => NavigationExample(),
+        ),
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(

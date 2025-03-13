@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smarthertask/auth/localdatabase.dart';
-import 'package:smarthertask/components.dart/button.dart';
-import 'package:smarthertask/components.dart/textfield.dart';
+import 'package:smarthertask/components/textfield.dart';
+import 'package:smarthertask/components/button.dart';
 
 class MyRegisterPage extends StatelessWidget {
   final VoidCallback onToggle;
