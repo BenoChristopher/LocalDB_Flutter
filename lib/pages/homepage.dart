@@ -6,6 +6,7 @@ import 'package:smarthertask/components/appbar.dart';
 import 'package:smarthertask/components/mydrawer.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
+import 'package:smarthertask/pages/foodpage.dart';
 
 class MyHomePage extends StatefulWidget {
   final String? userEmail;
@@ -36,6 +37,8 @@ class _MyHomePageState extends State<MyHomePage> {
     "assets/pngwing.com.png",
     "assets/pngwing.com.png",
   ];
+
+  bool isPickupSelected = true;
 
   @override
   Widget build(BuildContext context) {
@@ -135,61 +138,89 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                    padding: EdgeInsets.all(14),
-                    decoration: BoxDecoration(
-                        color: Colors.red.shade50,
-                        border:
-                            Border.all(color: Colors.red.shade200, width: 2),
-                        borderRadius: BorderRadius.all(Radius.circular(8))),
-                    height: 180,
-                    width: 180,
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: 125,
-                          width: 125,
-                          child: Image.asset(
-                            "assets/food.png",
-                            fit: BoxFit.fitWidth,
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      isPickupSelected = true;
+                    });
+                  },
+                  child: Container(
+                      padding: EdgeInsets.all(14),
+                      decoration: BoxDecoration(
+                          color: isPickupSelected
+                              ? Colors.red.shade50
+                              : Colors.grey[50],
+                          border: Border.all(
+                            color: isPickupSelected
+                                ? Colors.red.shade200
+                                : Colors.grey.shade50,
+                            width: 2,
                           ),
-                        ),
-                        Text(
-                          "Order Pickup",
-                          style: GoogleFonts.blinker(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            // color: Colors.grey.shade400,
+                          borderRadius: BorderRadius.all(Radius.circular(8))),
+                      height: 180,
+                      width: 180,
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 125,
+                            width: 125,
+                            child: Image.asset(
+                              "assets/food.png",
+                              fit: BoxFit.fitWidth,
+                            ),
                           ),
-                        )
-                      ],
-                    )),
-                Container(
-                    padding: EdgeInsets.all(14),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(8))),
-                    height: 180,
-                    width: 180,
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: 125,
-                          width: 125,
-                          child: Image.asset(
-                            "assets/table.png",
-                            fit: BoxFit.fitWidth,
+                          Text(
+                            "Order Pickup",
+                            style: GoogleFonts.blinker(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          )
+                        ],
+                      )),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      isPickupSelected = false;
+                    });
+                  },
+                  child: Container(
+                      padding: EdgeInsets.all(14),
+                      decoration: BoxDecoration(
+                          color: !isPickupSelected
+                              ? Colors.red.shade50
+                              : Colors.grey[50],
+                          border: Border.all(
+                            color: !isPickupSelected
+                                ? Colors.red.shade200
+                                : Colors.grey.shade50, // Change border
+                            width: 2,
                           ),
-                        ),
-                        Text(
-                          "Table Reservation",
-                          style: GoogleFonts.blinker(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            // color: Colors.grey.shade400,
+                          borderRadius: BorderRadius.all(Radius.circular(8))),
+                      height: 180,
+                      width: 180,
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 125,
+                            width: 125,
+                            child: Image.asset(
+                              "assets/table.png",
+                              fit: BoxFit.fitWidth,
+                            ),
                           ),
-                        ),
-                      ],
-                    )),
+                          Text(
+                            "Table Reservation",
+                            style: GoogleFonts.blinker(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              // color: Colors.grey.shade400,
+                            ),
+                          ),
+                        ],
+                      )),
+                ),
               ],
             ),
           ),

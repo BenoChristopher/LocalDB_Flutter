@@ -33,12 +33,11 @@ class CustomAppBar extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(
                           left: 30,
-                          top: 10,
                         ),
                         child: GestureDetector(
                           onTap: () {
-                            Scaffold.of(context)
-                                .openDrawer(); // Open the drawer
+                            // Scaffold.of(context)
+                            //     .openDrawer(); // Open the drawer
                           },
                           child: Container(
                             padding: EdgeInsets.symmetric(

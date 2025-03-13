@@ -68,7 +68,7 @@ class _NavigationExampleState extends State<NavigationExample> {
               color: Colors.red,
             ),
             icon: Icon(Icons.person),
-            label: 'LogOut',
+            label: 'My Profile',
           ),
         ],
       ),
