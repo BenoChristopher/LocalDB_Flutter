@@ -1,0 +1,2 @@
+C:/Ben/Flutter Projects/smarthertask/android/app/.cxx/Debug/5l37643v/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Ben/Flutter Projects/smarthertask/android/app/.cxx/Debug/5l37643v/armeabi-v7a/CMakeFiles/rebuild_cache.dir
